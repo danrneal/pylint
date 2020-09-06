@@ -21,7 +21,9 @@ debian/pylint
 .coverage
 .coverage.*
 .idea
+.vscode
 .cache/
 .eggs/
 .pytest_cache/
 .mypy_cache/
+venv
