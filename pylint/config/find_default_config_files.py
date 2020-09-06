@@ -3,6 +3,8 @@
 
 import configparser
 import os
+from pathlib import Path
+from typing import List, Union
 
 import toml
 
@@ -24,7 +26,7 @@ def _cfg_has_config(path):
     return any(section.startswith("pylint.") for section in parser.sections())
 
 
-def _get_config_paths(curdir):
+def _get_config_paths(curdir: Union[Path, str]) -> List[Path]:
     paths = []
     config_names = ("pylintrc", ".pylintrc", "pyproject.toml", "setup.cfg")
     for config_name in config_names:
