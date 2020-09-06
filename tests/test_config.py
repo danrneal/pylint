@@ -1,8 +1,8 @@
 # pylint: disable=missing-module-docstring, missing-function-docstring, protected-access
 import unittest.mock
 
-from pylint.config.find_default_config_files import _get_config_paths
 import pylint.lint
+from pylint.config.find_default_config_files import _get_config_paths
 
 
 def check_configuration_file_reader(config_file):
