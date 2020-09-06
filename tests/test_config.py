@@ -105,4 +105,3 @@ def test_gets_correct_config_files(tmp_path):
     assert len(paths) == 2
     assert rc.samefile(paths[0])
     assert toml.samefile(paths[1])
- 
