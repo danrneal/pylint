@@ -1,4 +1,5 @@
 # pylint: disable=missing-module-docstring, missing-function-docstring, protected-access
+import os
 import unittest.mock
 
 import pylint.lint
@@ -101,7 +102,7 @@ def test_gets_correct_config_files(tmp_path):
     rc.write_text("[]")
     cfg = tmp_path / "not_a_pylint_config.cfg"
     cfg.write_text("[pylint]")
-    paths = _get_config_paths(tmp_path)
+    paths = _get_config_paths(os.path.abspath(str(tmp_path)))
     assert len(paths) == 2
     assert rc.samefile(paths[0])
     assert toml.samefile(paths[1])
