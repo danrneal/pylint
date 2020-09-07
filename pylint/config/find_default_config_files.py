@@ -4,7 +4,7 @@
 import configparser
 import os
 from pathlib import Path
-from typing import List, Union
+from typing import Generator, List, Union
 
 import toml
 
@@ -42,7 +42,7 @@ def _get_config_paths(curdir: Union[Path, str]) -> List[str]:
     return paths
 
 
-def find_default_config_files() -> str:
+def find_default_config_files() -> Generator:
     """Find all possible config files."""
     for path in _get_config_paths(os.path.abspath(".")):
         yield (path)
