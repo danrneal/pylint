@@ -42,7 +42,7 @@ def _get_config_paths(curdir: Union[Path, str]) -> List[str]:
     return paths
 
 
-def find_default_config_files():
+def find_default_config_files() -> str:
     """Find all possible config files."""
     for path in _get_config_paths(os.path.abspath(".")):
         yield (path)
